@@ -95,20 +95,7 @@ class QuizzesController extends Controller
 		$tab = quiz::with('question')->with('possibleAnswer', function ($query) {
 			$query->with('question');
 		})->findOrFail($quiz->id)->toArray();
-		// chnger() {
-		// 	for (let i = 0; i < this.tab.question.length; i++) {
-		// 		this.quizReal.push(this.tab.question[i]);
-		// 		for (let u = 0; u < this.tab.possible_answer.length; u++) {
-		// 			this.quizReal[i].possible_answers = this.tab.possible_answer.filter(el => el.question_id == this.quizReal[i].id)
-		// 		}
-		// 	}
-		// 	return this.quizReal;
-		// }
-		// dd($tab);
 		$quizzes = [];
-		function verify ($el, $u, $quizzes){
-			$el['question_id'] == $quizzes['question'][$u]->id;
-		}
 		for ($i=0; $i < count($tab['question']); $i++) {
 			array_push($quizzes, $tab['question'][$i]);
 			$quizzes[$i]['possible_answers'] = [];

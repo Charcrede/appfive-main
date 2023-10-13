@@ -1,5 +1,5 @@
 <script setup>
-import Quizz from '../Quizzes/Quizz.vue';
+import Quizz from '';
 import { ref, watch } from 'vue';
 
 const props = defineProps(['quizzes']);

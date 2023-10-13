@@ -215,7 +215,7 @@ export default {
 						<form @submit.prevent="store()">
 							<div>
 								<ol v-for="possible_answer, i in questions[nbr].possible_answers" :key="i">
-									<input type="radio" :name="quiz.id"
+									<input type="radio" :name="quiz.id" @click="moyenne(possible_answer)"
 										@change="addAnswers(possible_answer, nbr, questions[nbr])" v-model="selectedInput">
 									<label id="reponse">{{ possible_answer.text }}</label>
 								</ol>
